@@ -1,7 +1,7 @@
 ﻿
 # MY ACCOUNT FOR MORE HELP
 
-[![N|Solid](https://s15.postimg.org/gx4yupoaj/426137179_4641_1027391734227066917.jpg)](https://telegram.org/mico_iq)
+[![N|Solid](https://s15.postimg.org/gx4yupoaj/426137179_4641_1027391734227066917.jpg)](https://telegram.me/mico_iq)
 # IMPORTANT
 * PUT THE TOKEN IN CONFIG FILE BETWEEN THE TWO PUTATION .
 * DO NOT FORGET TO READ THE IMPORTANT ARTICLE ON THE TOP OF CHANNEL.LUA FILE IN PLUGINS FOLDER

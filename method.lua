@@ -54,7 +54,7 @@ end
  function sendRequest(url)
 --print(url)
   local dat, res = HTTPS.request(url)
-  print(dat)
+  
   local tab = JSON:decode(dat)
   --if tab.result[1] then
   --for k,v in pairs(tab.result[1]) do

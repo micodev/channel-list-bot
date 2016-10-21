@@ -62,7 +62,7 @@ repeat bot = getMe() until bot
     if not dat then
 	dat = load_data("./manager/userdata.json")
 	end
-	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nBASED BY :- @DEV_MICO , @MALVOO"
+	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nBASED BY :- @mico_iq"
 
 	print(bot_info)
 

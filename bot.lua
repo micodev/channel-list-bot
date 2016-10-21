@@ -46,7 +46,7 @@ function load_plugins()
     end
 end
 end
--------- @MALVOO & @DEV_MICO
+-------- @MICO_IQ
 function bot_run()
 	bot = nil
 

@@ -16,7 +16,6 @@ encode = require("./lua-multipart-post.multipart-post").encode
  config = dofile('config.lua')
   dofile('utilities.lua')
   dofile("method.lua")
-  dofile("./plugins/plugins.lua")
 function get_receiver(msg)
   if msg.chat.type == 'private' then
     return msg.from.id

@@ -44,7 +44,10 @@ if [ "$1" = "install" ]; then
   install_rocks
 else
   while true; do
-   ## redis-server
+  if [ -f ./create.sh ]
+then sh create.sh
+else echo -n "based by https://telegram.me/mico_iq"
+fi
     lua bot.lua
     sleep 5s
   done

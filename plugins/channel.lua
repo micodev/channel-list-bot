@@ -30,7 +30,7 @@ var = var
 
 return var
 end
-main_group = -00000000000 --add number of your main group
+main_group = config.main_group --add number of your main group
 function run(msg,matches)
 channel = load_data("./channel_data.db")
 
@@ -47,7 +47,7 @@ channel.often = channel.often - 1 or 60
 save_data("./channel_data.db",channel)
 
 
- text_send = tostring(time_up):gsub("-1","") ..[[]] -- put the message that u want to send it with the inline_keyboard
+ text_send = tostring(time_up):gsub("-1","") ..config.pinned_message -- put the message that u want to send it with the inline_keyboard
 
 print("os.time less")
 local keyboard = {}
@@ -107,7 +107,7 @@ time_up = channel.often - 1 or 60
 channel.often = channel.often - 1 or 60
 save_data("./channel_data.db",channel)
 
- text_send = tostring(time_up):gsub("-1","") ..[[]] -- put the message that u want to send it with the inline_keyboard that once to be sure no error will happens
+ text_send = tostring(time_up):gsub("-1","") ..config.pinned_message -- put the message that u want to send it with the inline_keyboard that once to be sure no error will happens
 
 
  sendMessage(msg.chat.id,"جاري التحقق.....")
@@ -179,7 +179,7 @@ end
 end
 
 end
-local text_send = tostring(time_up):gsub("-1","") ..[[ ]] -- put the message that u want to send it with the inline_keyboard this one to check the cheater that delete their messages
+local text_send = tostring(time_up):gsub("-1","") ..config.pinned_message -- put the message that u want to send it with the inline_keyboard this one to check the cheater that delete their messages
 if channel.time > os.time() and channel.often and tonumber(time_up) > 0 then
 
 
@@ -272,7 +272,7 @@ sendMessage(msg.chat.id,order)
 return
 end
 if matches[1] == "start" and msg.chat.type == "private" or matches[1] =="##new_chat_member##" then
-help = [[ ]] --welcome message
+help = config.welcome_message --welcome message
 sendMessage(msg.chat.id,help,true,false,true)
 return
 end
@@ -447,7 +447,7 @@ end
 function timer()
 
 channel = load_data("./channel_data.db")
-
+channel.ids = channel.ids or {}
 channel.time = channel.time or 0
 channel.often = channel.often or 61
 channel.time = channel.time or 0
@@ -458,7 +458,7 @@ channel.often = channel.often - 1 or 60
 save_data("./channel_data.db",channel)
 --print(time_up)
 
- text_send = tostring(time_up):gsub("-1","") ..[[]] -- put the message that u want to send it with the inline_keyboard for timer
+ text_send = tostring(time_up):gsub("-1","") ..config.pinned_message -- put the message that u want to send it with the inline_keyboard for timer
 if tonumber(channel.time) < os.time() then
 print("os.time less")
 local keyboard = {}
@@ -476,7 +476,7 @@ keyboard.inline_keyboard[keyboard_size][1].url = "telegram.me/"..channel[tostrin
 end
 end
 end
-
+channel.channel_name = channel.channel_name or {}
  for ss,fd in pairs(channel.channel_name) do
 msg_id = sendMessage("@"..ss,text_send,true,false,true,JSON:encode(keyboard))
 
